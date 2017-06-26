@@ -1,0 +1,8 @@
+D:\Kelly\OJT\WebApplication\WebApplication\bin\WebApplication.dll.config
+D:\Kelly\OJT\WebApplication\WebApplication\bin\WebApplication.dll
+D:\Kelly\OJT\WebApplication\WebApplication\bin\WebApplication.pdb
+D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\WebApplication.dll
+D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\WebApplication.pdb
+D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.ResolveComReference.cache
+D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\Interop.MSORUNLib.dll
+D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\Interop.VSTOEE100.dll
