@@ -10,7 +10,7 @@ namespace WebApplication {
         protected void Page_Load(object sender, EventArgs e) {
             Response.Write(Session["Position"]);
             if (((string)Session["Position"]) == "Fiber Technician") {
-                Response.AppendHeader("Content-Disposition", "inline;filename=" + "General Test.xls");
+                //exam hereeeee
             }
 
         }

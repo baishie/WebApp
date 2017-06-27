@@ -13,4 +13,3 @@ C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\Interop.VSTOEE100.dll
 C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.csproj.ResolveComReference.cache
 C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.dll
 C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.pdb
-C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
