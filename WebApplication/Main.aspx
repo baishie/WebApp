@@ -20,7 +20,7 @@
 			    <div class="three_col">
 				    <input type="text" name="fname" id = "fname" placeholder="First Name" class="default" msg="Error for First name" runat="server" >
 				    <input type="text" name="lname" id = "lname" placeholder="Last Name" class="default" msg="Error for Last name" runat="server" >
-				    <input type="text" name="mi" placeholder="MI" id = "mi" class="default" msg="Error for Middle Initial" style="width:112px;" >			
+				    <input type="text" name="mi" placeholder="MI" id = "mi" class="default" msg="Error for Middle Initial" style="width:158px;" >			
 			    </div>
 			    <div class="one_col">
 				    <input type="text" name="address" id="address" placeholder="Address" class="default">
@@ -36,14 +36,14 @@
 				    <input type="text" name="bday" id="bday" placeholder="Birthday" class="default">
 			    </div>									
 			    <div class="three_col">
-                    <asp:DropDownList ID="PositionList" Width="322px" runat="server">
+                    <asp:DropDownList ID="PositionList" Width="460px" Height="45px" runat="server">
                         <asp:ListItem Value="0">Position</asp:ListItem>
                         <asp:ListItem Value="1">Fiber Technician</asp:ListItem>
                         <asp:ListItem Value="2">System Administrator</asp:ListItem>
                     </asp:DropDownList>
-                    <input type="text" name="source" id="source" placeholder="Source" class="default" style="width:322px;">				    	
+                    <input type="text" name="source" id="source" placeholder="Source" class="default" style="width:460px;">				    	
 			    </div>
-			    <span class="clear"></span>	
+
                 <div class="one_col">
                     <asp:Button ID="proceed" runat="server" Text="Proceed" OnClick="proceed_Click" />
                 </div>				

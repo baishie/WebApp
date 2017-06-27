@@ -41,8 +41,8 @@ h1{
  
 .contact{
 	position:relative;
-	width:60%;
-	max-width:700px;
+	width:100%;
+	max-width:1000px;
 	margin:0 auto 0%;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -60,7 +60,7 @@ h1{
  
 .three_col input, .one_col input, .three_col select, .one_col textarea, .one_col  #file {
 	position:relative;
-	padding:5px 5px;
+	padding:15px 10px;
 	margin:1% 2% 0% 2%;
 	float:left;
 	z-index:10;
@@ -110,21 +110,20 @@ h1{
 	width:96%;
 }
 
-.one_col #submit{
-	border-top-color: #4d4d4d;
-	background: #4d4d4d;
-	color: #d6d6d6;
-	cursor:pointer;
-    top: 0px;
-    left: 0px;
-    height: 33px;
+.one_col #proceed{
+    border-top-color: #2196F3;
+    background: #2196F3;
+    color: #fff;
+    cursor:pointer;
+
 }
 
-.one_col #submit:hover{
-	background: #333;
-	color: #d6d6d6;
+.one_col #proceed:hover{
+    border-top-color:#fff;
+	background: #fff;
+	color: #2196F3;
 }	
-
+	
 .clear{
 	clear:both;
 	content:"";

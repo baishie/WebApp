@@ -9,31 +9,12 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace WebApplication {
-    public class Client {
-        public string name;
-        public string position;
-        public int currentX;
-        public int currentY;
-
-        public string getPos () {
-            return position;
-        }
-        public int getRow() {
-            return currentX;
-        }
-        public int getColumn() {
-            return currentY;
-        }
-    }
     public partial class Main : System.Web.UI.Page {
-        public string formValue;
-        public Client user;
         protected void Page_Load(object sender, EventArgs e) {
 
         }
 
         protected void proceed_Click(object sender, EventArgs e){
-            user = new Client();
 
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
             string filepath = @"C:\Users\kellym\Downloads\WebApp\Sample.xlsx";
@@ -64,9 +45,6 @@ namespace WebApplication {
             x.Cells[add,4] = position;
             x.Cells[add,5] = cnumber;
 
-            user.name = name;
-            user.position = position;
-            user.currentX = add;
 
             sheet.Close(true, Type.Missing, Type.Missing);
             excel.Quit();
