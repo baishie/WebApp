@@ -37,14 +37,7 @@
 			    </div>									
 			    <div class="three_col">
 				    <input type="text" name="position" id="position" placeholder="Position" class="default" msg="Error for Position">
-				    <select>
-				      <option value="title">Source</option>
-				      <option value="one">one</option>
-				      <option value="two">two</option>
-				      <option value="three">three</option>;
-				      <option value="four">four</option>
-				    </select>	
-				    <input type="text" name="hired" id="dHired" placeholder="Date Hired" class="default">		
+                    <input type="text" name="source" id="source" placeholder="Source" class="default">				    	
 			    </div>
 			    <span class="clear"></span>	
                 <div class="one_col">

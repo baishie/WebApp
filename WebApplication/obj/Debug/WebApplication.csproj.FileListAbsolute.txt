@@ -6,3 +6,10 @@ D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\WebApplication.pdb
 D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\WebApplication.csproj.ResolveComReference.cache
 D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\Interop.MSORUNLib.dll
 D:\Kelly\OJT\WebApplication\WebApplication\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\kellym\Downloads\WebApp\WebApplication\bin\WebApplication.dll.config
+C:\Users\kellym\Downloads\WebApp\WebApplication\bin\WebApplication.dll
+C:\Users\kellym\Downloads\WebApp\WebApplication\bin\WebApplication.pdb
+C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\Interop.VSTOEE100.dll
+C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.csproj.ResolveComReference.cache
+C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.dll
+C:\Users\kellym\Downloads\WebApp\WebApplication\obj\Debug\WebApplication.pdb
