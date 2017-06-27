@@ -73,6 +73,7 @@ namespace WebApplication {
             Session["Name"] = name;
             Session["Row"] = add;
             Session["Position"] = position;
+            
             Response.Redirect("Phase1.aspx");
         }
     }
