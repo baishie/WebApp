@@ -36,8 +36,12 @@
 				    <input type="text" name="bday" id="bday" placeholder="Birthday" class="default">
 			    </div>									
 			    <div class="three_col">
-				    <input type="text" name="position" id="position" placeholder="Position" class="default" msg="Error for Position">
-                    <input type="text" name="source" id="source" placeholder="Source" class="default">				    	
+                    <asp:DropDownList ID="PositionList" Width="322px" runat="server">
+                        <asp:ListItem Value="0">Position</asp:ListItem>
+                        <asp:ListItem Value="1">Fiber Technician</asp:ListItem>
+                        <asp:ListItem Value="2">System Administrator</asp:ListItem>
+                    </asp:DropDownList>
+                    <input type="text" name="source" id="source" placeholder="Source" class="default" style="width:322px;">				    	
 			    </div>
 			    <span class="clear"></span>	
                 <div class="one_col">

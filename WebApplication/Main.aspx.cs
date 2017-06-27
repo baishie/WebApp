@@ -52,7 +52,8 @@ namespace WebApplication {
 
             string address = String.Format("{0}", Request.Form["address"]);
             string email = String.Format("{0}", Request.Form["email"]);
-            string position = String.Format("{0}", Request.Form["position"]);
+
+            string position = PositionList.SelectedItem.Text;
             string cnumber = String.Format("{0}", Request.Form["cnumber"]);
             string today = DateTime.Now.ToString("M-d-yyyy");
             string source = String.Format("{0}", Request.Form["source"]);
