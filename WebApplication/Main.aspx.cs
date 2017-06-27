@@ -70,7 +70,8 @@ namespace WebApplication {
             sheet.Close(true, Type.Missing, Type.Missing);
             excel.Quit();
 
-            Session["name"] = name;
+            Session["Name"] = name;
+            Session["Row"] = add;
             Session["Position"] = position;
             Response.Redirect("Phase1.aspx");
         }
