@@ -1,41 +1,46 @@
-﻿$(document).ready(function () {
-    file_style();
-    $('form').bind("submit", function (e) {
-        e.preventDefault();
-    });
-    $(".contact input").keyup(function () {
-        var value = $(this).val();
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-        if ($(this).parent().hasClass("email")) {
-            if (!reg.test($(this).val())) {
-                validate_animation($(this), "error");
-                error_message($(this), "error");
-            }
-            else {
-                validate_animation($(this), "success");
-                error_message($(this), "success");
-            }
-            exit;
+﻿function userValid() {
+    var Name, ConNum, pos, email, Source;
+ 
+    Name = document.getElementById("name").value;
+    ConNum = document.getElementById("cnumber").value;
+    address = document.getElementById("address").value;
+    email = document.getElementById("email").value;
+    source = document.getElementById("source").value;
+    pos = document.getElementById("PositionList").value;
+    emailExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([com\co\.\in])+$/; // regex to validate email id
+ 
+    if (Name == '' && ConNum == '' && email == '' && source =='' && pos == '' && address == '') {
+        alert("Enter All Fields");
+        return false;
+    }
+    if (Name == '') {
+        alert("Please Enter Name");
+        return false;
+    }
+    if (address == '') {
+        alert("Please Enter Address");
+        return false;
+    }
+    if (ConNum == '') {
+        alert("Please Enter Contact Number");
+        return false;
+    }
+    if (email == '') {
+        alert("Email Id Is Required");
+        return false;
+    }
+    if(source === 0) {
+        alert("Please select position");
+        return false;
+    }
+    if (email != '') {
+        if (!email.match(emailExp)) {
+            alert("Invalid Email Id");
+            return false;
         }
-        if (value.length > 0) {
-            validate_animation($(this), "success");
-            error_message($(this), "success");
-        }
-        else if (value.length == 0) {
-            validate_animation($(this), "blank");
-            error_message($(this), "blank");
-        }
-        else {
-            validate_animation($(this), "error");
-            error_message($(this), "error");
-        }
-    });
-
-    $(".contact input").blur(function () {
-        error_message($(this), "blank");
-    });
-});
+    }
+    return true;
+}
 
 function validate_animation(elem, is_valid) {
     if (is_valid != "blank") {

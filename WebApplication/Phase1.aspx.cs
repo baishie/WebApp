@@ -44,7 +44,12 @@ namespace WebApplication {
         }
 
         protected void nextPhase() {
-            Response.Redirect("SecPhase.aspx");
+            if (Session["Position"] == "Fiber Technician") {
+                Response.Redirect("GenExam.aspx");
+            }
+            else {
+                Response.Redirect("Supervisory.aspx");
+            }
         }
     }
 }

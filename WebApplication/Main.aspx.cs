@@ -10,6 +10,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WebApplication {
     public partial class Main : System.Web.UI.Page {
+        enum RowOrCol
+        {
+            Row,
+            Column
+        };
         protected void Page_Load(object sender, EventArgs e) {
 
         }
@@ -22,14 +27,15 @@ namespace WebApplication {
             Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
             
             Excel.Range userRange = x.UsedRange;
+
+            RemoveEmpty(userRange, RowOrCol.Row);
+            RemoveEmpty(userRange, RowOrCol.Column);
+
             int countRecords = userRange.Rows.Count;
             int add = countRecords + 1;
  
 
-            string fname = String.Format("{0}", Request.Form["fname"]);
-            string lname = String.Format("{0}", Request.Form["lname"]);
-            string mi = String.Format("{0}", Request.Form["mi"]);
-            string name = fname +" "+ mi + ". " + lname;
+            string name = String.Format("{0}", Request.Form["name"]);
 
             string address = String.Format("{0}", Request.Form["address"]);
             string email = String.Format("{0}", Request.Form["email"]);
@@ -54,6 +60,36 @@ namespace WebApplication {
             Session["Position"] = position;
             
             Response.Redirect("Phase1.aspx");
+        }
+        private static void RemoveEmpty(Excel.Range usedRange, RowOrCol rowOrCol){
+            int count;
+            Excel.Range curRange;
+            if (rowOrCol == RowOrCol.Column)
+                count = usedRange.Columns.Count;
+            else
+                count = usedRange.Rows.Count;
+
+            for (int i = count; i > 0; i--){
+                bool isEmpty = true;
+                if (rowOrCol == RowOrCol.Column)
+                    curRange = usedRange.Columns[i];
+                else
+                    curRange = usedRange.Rows[i];
+
+                foreach (Excel.Range cell in curRange.Cells){
+                    if (cell.Value != null) {
+                        isEmpty = false;
+                        break; // we can exit this loop since the range is not empty
+                    }
+                    else{
+                        // Cell value is null contiue checking
+                    }
+                } // end loop thru each cell in this range (row or column)
+
+                if (isEmpty) {
+                    curRange.Delete();
+                }
+            }
         }
     }
 }
