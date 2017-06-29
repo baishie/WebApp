@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.Office.Interop;
+using System.Data;
+using System.Data.OleDb;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WebApplication{
@@ -24,13 +26,16 @@ namespace WebApplication{
             //Response.Write(FilePath);
             //Response.End();
 
+            //var excelApp = new Excel.Application();
+            //excelApp.Visible = true;
             string filepath = @"C:\Users\kellym\Downloads\WebApp\General Test.xlsx";
-            var excelApp = new Excel.Application();
-            excelApp.Visible = true;
-
-            Excel.Workbooks books = excelApp.Workbooks;
-            Excel.Workbook sheet = books.Open(filepath);
+            //Excel.Workbooks books = excelApp.Workbooks;
+            //Excel.Workbook sheet = books.Open(filepath);
 
         }
+
+
+
+
     }
 }

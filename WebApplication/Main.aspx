@@ -39,7 +39,17 @@
                         <asp:ListItem Value="1">Fiber Technician</asp:ListItem>
                         <asp:ListItem Value="2">System Administrator</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="source" placeholder="Source" runat="server" style="width:460px;" required="required"></asp:TextBox>	    	
+                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" required="required" >
+                        <asp:ListItem Value="0">Source</asp:ListItem>
+                        <asp:ListItem Value="1">Mynimo</asp:ListItem>
+                        <asp:ListItem Value="2">JObstreet</asp:ListItem>
+                        <asp:ListItem Value="3">Referral</asp:ListItem>
+                        <asp:ListItem Value="4">Walk-in</asp:ListItem>
+                        <asp:ListItem Value="5">HOIT Website</asp:ListItem>
+                        <asp:ListItem Value="6">HOIT Careers FB Page</asp:ListItem>
+                        <asp:ListItem Value="7">LinkedIn</asp:ListItem>
+                    </asp:DropDownList>
+                    <%--<asp:TextBox ID="source" placeholder="Source" runat="server" style="width:460px;" required="required"></asp:TextBox>--%>	    	
 			    </div>
 
                 <div class="one_col">
