@@ -32,19 +32,7 @@ namespace WebApplication{
                 }
                 reader.Close();
                 fp.Close();
-
-                //using (StreamReader r = new StreamReader(f))
-                //{
-                //    string line;
-                //    while ((line = r.ReadLine()) != null)
-                //    {
-                //        lines.Add(line);
-                //    }
-                //}
             }
-
-
-
         }
 
         protected void proceed_Click(object sender, EventArgs e) {
