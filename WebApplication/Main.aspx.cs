@@ -84,10 +84,13 @@ namespace WebApplication{
         private static void RemoveEmpty(Microsoft.Office.Interop.Excel.Range usedRange, RowOrCol rowOrCol) {
             int count;
             Microsoft.Office.Interop.Excel.Range curRange;
-            if (rowOrCol == RowOrCol.Column)
+            if (rowOrCol == RowOrCol.Column) {
                 count = usedRange.Columns.Count;
-            else
+            }
+            else {
                 count = usedRange.Rows.Count;
+            }
+  
 
             for (int i = count; i > 0; i--) {
                 bool isEmpty = true;
@@ -103,7 +106,7 @@ namespace WebApplication{
                         break; // we can exit this loop since the range is not empty
                     }
                     else {
-                        // Cell value is null contiue checking
+                        // Cell value is null  so contiue checking
                     }
                 } // end loop thru each cell in this range (row or column)
 
