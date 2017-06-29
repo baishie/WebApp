@@ -2,41 +2,68 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
+using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
 
-namespace WebApplication
-{
-    public partial class Main : System.Web.UI.Page
-    {
-        enum RowOrCol
-        {
+namespace WebApplication{
+    public partial class Main : System.Web.UI.Page{
+        enum RowOrCol {
             Row,
             Column
         };
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e) {
+            if (!IsPostBack)
+            {
+                const string f = @"C:\Users\kellym\Downloads\WebApp\Source.txt";
+                FileStream fp = new FileStream(f, FileMode.Open);
+                StreamReader reader = new StreamReader(fp);
+
+                string data;
+                List<string> lines = new List<string>();
+                while ((data = reader.ReadLine()) != null)
+                {
+                    ListItem L = new ListItem(data);
+                    Source.Items.Add(L);
+                }
+                reader.Close();
+                fp.Close();
+
+                //using (StreamReader r = new StreamReader(f))
+                //{
+                //    string line;
+                //    while ((line = r.ReadLine()) != null)
+                //    {
+                //        lines.Add(line);
+                //    }
+                //}
+            }
+
+
 
         }
 
-        protected void proceed_Click(object sender, EventArgs e)
-        {
+        protected void proceed_Click(object sender, EventArgs e) {
 
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
             string filepath = @"C:\Users\kellym\Downloads\WebApp\Sample.xlsx";
             Microsoft.Office.Interop.Excel.Workbook sheet = excel.Workbooks.Open(filepath);
             Microsoft.Office.Interop.Excel.Worksheet x = excel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+            
             Microsoft.Office.Interop.Excel.Range userRange = x.UsedRange;
-            RemoveEmpty(userRange, RowOrCol.Row);
-            RemoveEmpty(userRange, RowOrCol.Column);
+            RemoveEmpty(userRange, RowOrCol.Row); //removes the deleted/empty rows in excel
+            RemoveEmpty(userRange, RowOrCol.Column); //removes the deleted/empty columns in excel
 
-            userRange = x.UsedRange;
+            userRange = x.UsedRange; // get Range
 
 
             int countRecords = userRange.Rows.Count;
+            int columnCount = userRange.Columns.Count;
+
             int add = countRecords + 1;
 
 
@@ -66,8 +93,7 @@ namespace WebApplication
 
             Response.Redirect("Phase1.aspx");
         }
-        private static void RemoveEmpty(Microsoft.Office.Interop.Excel.Range usedRange, RowOrCol rowOrCol)
-        {
+        private static void RemoveEmpty(Microsoft.Office.Interop.Excel.Range usedRange, RowOrCol rowOrCol) {
             int count;
             Microsoft.Office.Interop.Excel.Range curRange;
             if (rowOrCol == RowOrCol.Column)
@@ -75,29 +101,25 @@ namespace WebApplication
             else
                 count = usedRange.Rows.Count;
 
-            for (int i = count; i > 0; i--)
-            {
+            for (int i = count; i > 0; i--) {
                 bool isEmpty = true;
-                if (rowOrCol == RowOrCol.Column)
+                if (rowOrCol == RowOrCol.Column) {
                     curRange = usedRange.Columns[i];
-                else
+                }
+                else {
                     curRange = usedRange.Rows[i];
-
-                foreach (Microsoft.Office.Interop.Excel.Range cell in curRange.Cells)
-                {
-                    if (cell.Value != null)
-                    {
+                }
+                foreach (Microsoft.Office.Interop.Excel.Range cell in curRange.Cells) {
+                    if (cell.Value != null){
                         isEmpty = false;
                         break; // we can exit this loop since the range is not empty
                     }
-                    else
-                    {
+                    else {
                         // Cell value is null contiue checking
                     }
                 } // end loop thru each cell in this range (row or column)
 
-                if (isEmpty)
-                {
+                if (isEmpty){
                     curRange.Delete();
                 }
             }
