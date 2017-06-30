@@ -44,6 +44,9 @@
     <Reference Include="Excel">
       <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelWrapper">
+      <HintPath>\\HOITDC\RedirectedFolders\kellym\My Documents\Visual Studio 2013\Projects\ExcelWrapperClient1\ExcelWrapper_2.0.0.0\ExcelWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -57,6 +60,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,6 +71,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JS\Exam.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\main.css" />
+    <Content Include="Redirect.aspx" />
     <Content Include="Supervisory.aspx" />
     <Content Include="GenExam.aspx" />
     <Content Include="Images\HOIT_Icon.png" />
@@ -86,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Redirect.aspx.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect.aspx.designer.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Supervisory.aspx.cs">
       <DependentUpon>Supervisory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

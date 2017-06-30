@@ -8,6 +8,13 @@ using Microsoft.Office.Interop;
 using System.Data;
 using System.Data.OleDb;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
+using System.IO;
+using System.Windows.Forms;
+using ExcelWrapper;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace WebApplication{
     public partial class GenExam : System.Web.UI.Page{
@@ -31,6 +38,12 @@ namespace WebApplication{
             string filepath = @"C:\Users\kellym\Downloads\WebApp\General Test.xlsx";
             //Excel.Workbooks books = excelApp.Workbooks;
             //Excel.Workbook sheet = books.Open(filepath);
+            Response.Clear();
+            Response.AppendHeader("Content-Disposition", "inline; filename=\"" + filepath + "\"");
+
+            //Response.AddHeader("Content-Disposition", "inline; filename=test.xlsx;name=test.xlsx;");
+            //Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
 
         }
 
