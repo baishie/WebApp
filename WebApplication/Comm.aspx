@@ -256,7 +256,7 @@
                 <li class="quiz-answer" data-quiz-answer="c">C. however, while </li>
                 <li class="quiz-answer" data-quiz-answer="d">D. earned, uses </li>
                 <li class="quiz-answer" data-quiz-answer="e">E. wherever, when </li>
-              </ul> 
+              </ul> cd down
 
               <h2 class="quiz-question">25.) Before the development law was signed, the Filipino fisherman <u>earn</u> very little: They <u>use</u> crude methods of fishing which prevented them from catching more fish. </h2>
               <ul data-quiz-question="25">
