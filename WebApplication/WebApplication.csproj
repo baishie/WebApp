@@ -71,7 +71,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Comm.aspx" />
+    <Content Include="CSS\GenExam.css" />
+    <Content Include="JS\Comm.js" />
     <Content Include="JS\Exam.js" />
+    <Content Include="JS\Math.js" />
+    <Content Include="Math.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -89,9 +94,24 @@
     <Content Include="JS\main.js" />
     <Content Include="Main.aspx" />
     <Content Include="Phase1.aspx" />
+    <Content Include="Vocabulary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comm.aspx.cs">
+      <DependentUpon>Comm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comm.aspx.designer.cs">
+      <DependentUpon>Comm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Math.aspx.cs">
+      <DependentUpon>Math.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Math.aspx.designer.cs">
+      <DependentUpon>Math.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Redirect.aspx.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +148,13 @@
       <DependentUpon>Phase1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vocabulary.aspx.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vocabulary.aspx.designer.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

@@ -49,22 +49,7 @@
       { question: 42, answer: 'a' },
       { question: 43, answer: 'a' },
       { question: 44, answer: 'a' },
-      { question: 45, answer: 'a' },
-      { question: 46, answer: 'a' },
-      { question: 47, answer: 'a' },
-      { question: 48, answer: 'a' },
-      { question: 49, answer: 'a' },
-      { question: 50, answer: 'a' },
-      { question: 51, answer: 'a' },
-      { question: 52, answer: 'a' },
-      { question: 53, answer: 'a' },
-      { question: 54, answer: 'a' },
-      { question: 55, answer: 'a' },
-      { question: 56, answer: 'a' },
-      { question: 57, answer: 'a' },
-      { question: 58, answer: 'a' },
-      { question: 59, answer: 'a' },
-      { question: 60, answer: 'a' },
+
 
     ]
 
@@ -100,7 +85,7 @@
         if (numberOfCorrectAnswers < 10) {
             return { code: 'bad', text: 'Poor ' };
         }
-        else if (numberOfCorrectAnswers > 9 && numberOfCorrectAnswers < 16 ) {
+        else if (numberOfCorrectAnswers > 9 && numberOfCorrectAnswers < 16) {
             return { code: 'mid', text: 'Moderate ' };
         }
         else if (numberOfCorrectAnswers > 15) {
@@ -114,7 +99,7 @@
                 answersComplete++;
             }
         });
-        if (answersComplete >= 60) {
+        if (answersComplete >= 44) {
             return true;
         }
         else {

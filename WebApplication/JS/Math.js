@@ -25,47 +25,6 @@
       { question: 18, answer: 'a' },
       { question: 19, answer: 'a' },
       { question: 20, answer: 'a' },
-      { question: 21, answer: 'a' },
-      { question: 22, answer: 'a' },
-      { question: 23, answer: 'a' },
-      { question: 24, answer: 'a' },
-      { question: 25, answer: 'a' },
-      { question: 26, answer: 'a' },
-      { question: 27, answer: 'a' },
-      { question: 28, answer: 'a' },
-      { question: 29, answer: 'a' },
-      { question: 30, answer: 'a' },
-      { question: 31, answer: 'a' },
-      { question: 32, answer: 'a' },
-      { question: 33, answer: 'a' },
-      { question: 34, answer: 'a' },
-      { question: 35, answer: 'a' },
-      { question: 36, answer: 'a' },
-      { question: 37, answer: 'a' },
-      { question: 38, answer: 'a' },
-      { question: 39, answer: 'a' },
-      { question: 40, answer: 'a' },
-      { question: 41, answer: 'a' },
-      { question: 42, answer: 'a' },
-      { question: 43, answer: 'a' },
-      { question: 44, answer: 'a' },
-      { question: 45, answer: 'a' },
-      { question: 46, answer: 'a' },
-      { question: 47, answer: 'a' },
-      { question: 48, answer: 'a' },
-      { question: 49, answer: 'a' },
-      { question: 50, answer: 'a' },
-      { question: 51, answer: 'a' },
-      { question: 52, answer: 'a' },
-      { question: 53, answer: 'a' },
-      { question: 54, answer: 'a' },
-      { question: 55, answer: 'a' },
-      { question: 56, answer: 'a' },
-      { question: 57, answer: 'a' },
-      { question: 58, answer: 'a' },
-      { question: 59, answer: 'a' },
-      { question: 60, answer: 'a' },
-
     ]
 
     this._pickAnswer = function ($answer, $answers) {
@@ -100,7 +59,7 @@
         if (numberOfCorrectAnswers < 10) {
             return { code: 'bad', text: 'Poor ' };
         }
-        else if (numberOfCorrectAnswers > 9 && numberOfCorrectAnswers < 16 ) {
+        else if (numberOfCorrectAnswers > 9 && numberOfCorrectAnswers < 16) {
             return { code: 'mid', text: 'Moderate ' };
         }
         else if (numberOfCorrectAnswers > 15) {
@@ -114,7 +73,7 @@
                 answersComplete++;
             }
         });
-        if (answersComplete >= 60) {
+        if (answersComplete >= 20) {
             return true;
         }
         else {
