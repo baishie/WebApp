@@ -9,7 +9,12 @@
 </head>
     <script src="JS/main.js"></script>
     <body> 
-         
+    <header >
+      <figure class="logo" runat="server">
+      <img src="/images/HOIT_Icon.png" height="120px">
+          <br /><br /><br /><br /><br />
+      </figure>
+    </header>         
         <div class="contact" runat="server">
                 <form id="form1" runat="server">
                     <div class="one_col">
