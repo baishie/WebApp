@@ -16,7 +16,7 @@
       </figure>
     </header>
 	<h1>Contact Form</h1>
-    <div class="contact" runat="server" method="Post">
+    <div class="contact" runat="server" >
             <form id="form1" runat="server">
 			    <div class="one_col">
                     <asp:TextBox ID="name" placeholder="Name" runat="server" required="required"></asp:TextBox>
