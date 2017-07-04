@@ -66,3 +66,79 @@ function error_message(elem, is_valid) {
         elem.next().hide();
     }
 }
+
+function StartTest(popUpPage) {
+    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+}
+
+//var seconds = readCookie('totalSeconds') || 130;
+
+//function startTimer(duration, display) {
+//    var timer = duration, minutes, seconds;
+//    setInterval(function () {
+//        minutes = parseInt(timer / 60, 10)
+//        seconds = parseInt(timer % 60, 10);
+
+//        minutes = minutes < 10 ? "0" + minutes : minutes;
+//        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//        display.textContent = minutes + ":" + seconds;
+
+//        if (--timer < 0) {
+//            timer = duration;
+//        }
+//    }, 1000);
+//}
+
+//window.onload = function () {
+//    var fiveMinutes = 60 * 60,
+//        display = document.querySelector('#time');
+//    startTimer(fiveMinutes, display);
+//};
+
+
+//var hoursleft = 0;
+var minutesleft = 60;
+var secondsleft = 00;
+var finishedtext = "Countdown finished!";
+var end1;
+if (localStorage.getItem("end1")) {
+    end1 = new Date(localStorage.getItem("end1"));
+} else {
+    end1 = new Date();
+    end1.setMinutes(end1.getMinutes() + minutesleft);
+    end1.setSeconds(end1.getSeconds() + secondsleft);
+
+}
+var counter = function () {
+    var now = new Date();
+    var diff = end1 - now;
+
+    diff = new Date(diff);
+
+    var milliseconds = parseInt((diff % 1000) / 100)
+    var sec = parseInt((diff / 1000) % 60)
+    var mins = parseInt((diff / (1000 * 60)) % 60)
+    //var hours = parseInt((diff/(1000*60*60))%24);
+
+    if (mins < 10) {
+        mins = "0" + mins;
+    }
+    if (sec < 10) {
+        sec = "0" + sec;
+    }
+    if (now >= end1) {
+        clearTimeout(interval);
+        //localStorage.setItem("end", null);
+        localStorage.removeItem("end1");
+        localStorage.clear();
+        document.getElementById('divCounter').innerHTML = finishedtext;
+        if (confirm("TIME UP!"))
+            window.location.href = "";
+    } else {
+        var value = mins + ":" + sec;
+        localStorage.setItem("end1", end1);
+        document.getElementById('divCounter').innerHTML = value;
+    }
+}
+var interval = setInterval(counter, 1000);

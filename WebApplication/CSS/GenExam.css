@@ -65,7 +65,13 @@
 .quiz-result.good {
   background: green;
 }
-.quiz-result.mid {
+.quiz-result.aboveAve {
+  background: yellowgreen;
+}
+.quiz-result.ave {
+  background: yellow;
+}
+.quiz-result.belowAve {
   background: orange;
 }
 .quiz-result.bad {

@@ -13,5 +13,12 @@ namespace WebApplication
         {
 
         }
+        protected void proceed_Submit(object sender, EventArgs e)
+        {
+            string variable = String.Format("{0}", Request.Form["quiz-result"]);
+            Response.Write(variable);
+            Response.Write("HAHAHAHA");
+
+        }
     }
 }

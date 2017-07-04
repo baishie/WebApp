@@ -578,12 +578,16 @@
                 <li class="quiz-answer" data-quiz-answer="d">d. Utos : Liwanagin</li>
                 <li class="quiz-answer" data-quiz-answer="e">e. Habilin : Sabihin</li>
               </ul>  
-                                                                                                                                                                                                                                                                                              
+                  <input type="hidden" value="THE OUTPUT OF PRODUCT FUNCTION" id="myvalue">
+                 <div class="one_col">
+                    <asp:Button ID="proceed" runat="server" Text="Submit" OnClick="proceed_Submit"/>
+
+                </div>                                                                                                                                                                                                                                                                                             
               </div>
 
         </form> 
 
-<div class="quiz-result"></div>
+    <div class="quiz-result"></div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="JS/Exam.js"></script>
 </body>

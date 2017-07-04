@@ -7,7 +7,7 @@
     <title>Trial Ran ni</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
-    <script src="JS/Exam.js"></script>
+    <script src="JS/main.js"></script>
     <body>  
         <div class="contact" runat="server">
                 <form id="form1" runat="server">
@@ -16,7 +16,7 @@
                     </div>	
 
                     <div class="one_col">
-                        <asp:Button ID="proceed" runat="server" Text="Start Test" OnClientClick="return StartTest('GenExam.aspx');"/>
+                        <asp:Button ID="proceed" runat="server" Text="Start Test" OnClick="proceed_Exam"/>
                     </div>				
              </form>
 

@@ -14,15 +14,14 @@ namespace WebApplication
         }
         protected void proceed_Exam(object sender, EventArgs e)
         {
-            Response.Redirect("GenExam.aspx");
-            //if (Session["Position"] == "Fiber Technician")
-            //{
-            //    Response.Redirect("GenExam.aspx");
-            //}
-            //else
-            //{
-            //    Response.Redirect("Supervisory.aspx");
-            //}
+            if (Session["Position"] == "Fiber Technician")
+            {
+                Response.Redirect("GenExam.aspx");
+            }
+            else
+            {
+                Response.Redirect("Supervisory.aspx");
+            }
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

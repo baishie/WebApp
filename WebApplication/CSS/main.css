@@ -33,7 +33,7 @@ h1{
 	color:#2196F3;
 	margin-bottom: 0;
 	text-align:center;
-	 font: 70px Tahoma,Helvetica,Arial,Sans-Serif;
+	font: 70px Tahoma,Helvetica,Arial,Sans-Serif;
 	position:relative;
 	width:90%;
 	margin:2% auto 0%;
@@ -49,7 +49,6 @@ h1{
 	-o-border-radius: 5px;
 	-ms-border-radius: 5px;
 	border-radius: 5px; 
-	top: 256px;
     left: -3px;
 }
 

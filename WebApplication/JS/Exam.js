@@ -97,14 +97,23 @@
                 $this.find('.quiz-answer.active').addClass('incorrect');
             }
         });
-        if (numberOfCorrectAnswers < 10) {
+        var tempResults = numberOfCorrectAnswers;
+
+        var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 60) * 100));
+        if (numberOfCorrectAnswers <= 15) {
             return { code: 'bad', text: 'Poor ' };
         }
-        else if (numberOfCorrectAnswers > 9 && numberOfCorrectAnswers < 16 ) {
-            return { code: 'mid', text: 'Moderate ' };
+        else if ((numberOfCorrectAnswers >= 16) && (numberOfCorrectAnswers <= 36)) {
+            return { code: 'belowAve', text: 'Below Average' };
         }
-        else if (numberOfCorrectAnswers > 15) {
-            return { code: 'good', text: 'Good ' };
+        else if (numberOfCorrectAnswers > 36 && numberOfCorrectAnswers < 66 ) {
+            return { code: 'ave', text: 'Average ' };
+        }
+        else if (numberOfCorrectAnswers > 65 && numberOfCorrectAnswers < 86) {
+            return { code: 'aboveAve', text: 'Above Average ' };
+        }
+        else if (numberOfCorrectAnswers > 85) {
+            return { code: 'good', text: 'Outstanding ' };
         }
     }
     this._isComplete = function () {
@@ -145,3 +154,11 @@
 }
 var quiz = new Quiz();
 quiz.init();
+
+var somefunction = function () {
+    var hdnfldVariable = document.getElementById('hdnfldVariable');
+    hdnfldVariable.value = $('.quiz-result').addClass(result.code).html(result.text);
+}
+function setInputValue(input_id, val) {
+    document.getElementById(input_id).setAttribute('value', val);
+}
