@@ -11,14 +11,12 @@ namespace WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         protected void proceed_Submit(object sender, EventArgs e)
         {
-            string variable = String.Format("{0}", Request.Form["quiz-result"]);
-            Response.Write(variable);
-            Response.Write("HAHAHAHA");
-
+            string vocabResult = hdnField.Value;
+            Session["VocabResult"] = vocabResult;
+            //Response.Write(Session["VocabResult"]);
         }
     }
 }

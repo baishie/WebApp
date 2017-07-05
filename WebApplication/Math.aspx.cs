@@ -13,5 +13,11 @@ namespace WebApplication
         {
 
         }
+        protected void proceed_Submit(object sender, EventArgs e)
+        {
+            string mathResult = hdnField.Value;
+            Session["MathResult"] = mathResult;
+            Response.Write(Session["MathResult"]);
+        }
     }
 }

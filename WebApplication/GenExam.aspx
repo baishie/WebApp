@@ -26,15 +26,15 @@
                     </div>	
                     
                     <div class="one_col">
-                        <asp:Button ID="Button2" runat="server" Text="Mathematics" OnClientClick="return StartTest('Math.aspx');"/>
+                        <asp:Button ID="Button2" runat="server" Text="Mathematics" OnClientClick="return StartTest1('Math.aspx');"/>
                     </div>	        
                     
                     <div class="one_col">
-                        <asp:Button ID="Button3" runat="server" Text="Communication" OnClientClick="return StartTest('Comm.aspx');"/>
+                        <asp:Button ID="Button3" runat="server" Text="Communication" OnClientClick="return StartTest2('Comm.aspx');"/>
                     </div>	
 
                     <div class="one_col">
-                        <asp:Button ID="Button4" runat="server" Text="Logic" OnClientClick="return StartTest('Logic.aspx');"/>
+                        <asp:Button ID="Button4" runat="server" Text="Logic" OnClientClick="return StartTest3('Logic.aspx');"/>
                     </div>	
                                                                         			
              </form>

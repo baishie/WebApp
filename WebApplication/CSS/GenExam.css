@@ -104,3 +104,7 @@ span:after {
   font-size: 12px;
   line-height: 16px;
 }
+
+input[disabled] {
+	background-color:#515151;
+}

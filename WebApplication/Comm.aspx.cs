@@ -13,5 +13,11 @@ namespace WebApplication
         {
 
         }
+        protected void proceed_Submit(object sender, EventArgs e)
+        {
+            string commResult = hdnField.Value;
+            Session["CommResult"] = commResult;
+            Response.Write(Session["CommResult"]);
+        }
     }
 }

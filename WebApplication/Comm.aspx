@@ -12,9 +12,9 @@
 
 <body>
         <form id="form" runat="server">  
-               
+              <asp:HiddenField ID="hdnField" runat="server" value=""  />
               <div class="quiz">
-                  <b><i>VOCABULARY (Synonyms)</i></b> <br /><br />
+                  <b><i>COMMUNICATION (Identifying the Errors)</i></b> <br /><br />
                <b>DIRECTIONS:</b><br /><br />
                   Each of the items below consists of phrase which is followed by five words labeled a,b,c,d,e. Choose the one which is most <u>similar</u> meaning to the <u>underlined</u> word in the phrase. <br /><br />
                   <br />
@@ -449,7 +449,10 @@
                 <li class="quiz-answer" data-quiz-answer="e">E. Lupain ng Pangako </li>
               </ul>  
                   
-                                                                                                                                                                                                                                                                                              
+                 <div class="one_col">
+                    <asp:Button ID="proceed" runat="server" Text="Submit" OnClick="proceed_Submit" />
+                </div> 
+                                                                                                                                                                                                                                                                                                                   
               </div>
 
         </form> 

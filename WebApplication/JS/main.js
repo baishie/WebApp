@@ -68,36 +68,22 @@ function error_message(elem, is_valid) {
 }
 
 function StartTest(popUpPage) {
+    document.getElementById("Button1").disabled = true;
+    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+}
+function StartTest1(popUpPage) {
+    document.getElementById("Button2").disabled = true;
+    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+}
+function StartTest2(popUpPage) {
+    document.getElementById("Button3").disabled = true;
+    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+}
+function StartTest3(popUpPage) {
+    document.getElementById("Button4").disabled = true;
     window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
 }
 
-//var seconds = readCookie('totalSeconds') || 130;
-
-//function startTimer(duration, display) {
-//    var timer = duration, minutes, seconds;
-//    setInterval(function () {
-//        minutes = parseInt(timer / 60, 10)
-//        seconds = parseInt(timer % 60, 10);
-
-//        minutes = minutes < 10 ? "0" + minutes : minutes;
-//        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//        display.textContent = minutes + ":" + seconds;
-
-//        if (--timer < 0) {
-//            timer = duration;
-//        }
-//    }, 1000);
-//}
-
-//window.onload = function () {
-//    var fiveMinutes = 60 * 60,
-//        display = document.querySelector('#time');
-//    startTimer(fiveMinutes, display);
-//};
-
-
-//var hoursleft = 0;
 
 function timer() {
     var minutesleft = 60;
@@ -136,7 +122,7 @@ function timer() {
             localStorage.clear();
             document.getElementById('divCounter').innerHTML = finishedtext;
             if (confirm("TIME UP!"))
-                window.location.href = "";
+                window.location.href = "ThirdPhase.aspx";
         } else {
             var value = mins + ":" + sec;
             localStorage.setItem("end1", end1);

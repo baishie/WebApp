@@ -14,6 +14,7 @@
         <form id="form" runat="server">  
                
               <div class="quiz">
+                  <asp:HiddenField ID="hdnField" runat="server" value=""  />
                   <b><i>Problem Solving </i></b> <br /><br />
                <b>DIRECTIONS:</b><br /><br />
                  This is a test of your ability to think out solutions to quantitative problems. Read carefully each problem and determine the correct answer from the choices. After you
@@ -320,13 +321,16 @@
                 <li class="quiz-answer" data-quiz-answer="d">D</li>
                 <li class="quiz-answer" data-quiz-answer="e">E</li>
               </ul>
-                                                                                                                                                                                                                                                                                              
+
+                 <div class="one_col">
+                    <asp:Button ID="proceed" runat="server" Text="Submit" OnClick="proceed_Submit" />
+                </div>   
+                                                                                                                                                                                                                                                                                                                
               </div>
 
         </form> 
 
-<div class="quiz-result"></div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="JS/Math.js"></script>
 </body>
 </html>

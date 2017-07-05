@@ -1,4 +1,5 @@
-﻿var Quiz = function () {
+﻿var Results; 
+var Quiz = function () {
     var self = this;
     this.init = function () {
         self._bindEvents();
@@ -90,45 +91,57 @@
                 numberOfCorrectAnswers++;
 
                 // highlight this as correct answer
-                $this.find('.quiz-answer.active').addClass('correct');
+                //$this.find('.quiz-answer.active').addClass('correct');
             }
-            else {
-                $this.find('.quiz-answer[data-quiz-answer="' + correctAnswer + '"]').addClass('correct');
-                $this.find('.quiz-answer.active').addClass('incorrect');
-            }
+            //else {
+            //    $this.find('.quiz-answer[data-quiz-answer="' + correctAnswer + '"]').addClass('correct');
+            //    $this.find('.quiz-answer.active').addClass('incorrect');
+            //}
         });
         var tempResults = numberOfCorrectAnswers;
 
         var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 60) * 100));
         if (numberOfCorrectAnswers <= 15) {
+            Results = 'Poor';
             return { code: 'bad', text: 'Poor ' };
         }
         else if ((numberOfCorrectAnswers >= 16) && (numberOfCorrectAnswers <= 36)) {
+            Results = 'Below Average';
             return { code: 'belowAve', text: 'Below Average' };
         }
-        else if (numberOfCorrectAnswers > 36 && numberOfCorrectAnswers < 66 ) {
+        else if (numberOfCorrectAnswers > 36 && numberOfCorrectAnswers < 66) {
+            Results = 'Average';
             return { code: 'ave', text: 'Average ' };
         }
         else if (numberOfCorrectAnswers > 65 && numberOfCorrectAnswers < 86) {
+            Results = 'Above Average';
             return { code: 'aboveAve', text: 'Above Average ' };
         }
         else if (numberOfCorrectAnswers > 85) {
-            return { code: 'good', text: 'Outstanding ' };
+            Results = 'Outstanding';
+            return { code: 'good', text: 'Outstanding' };
         }
     }
     this._isComplete = function () {
+        var clicked = false;
         var answersComplete = 0;
-        $('ul[data-quiz-question]').each(function () {
-            if ($(this).find('.quiz-answer.active').length) {
-                answersComplete++;
-            }
+        $(document).on('click', 'input',  function (e) {
+            clicked = true;
+            self._calcResult();
+            $('.quiz-answer').off('click');
+            document.getElementById('hdnField').value = Results;
+            e.preventDefault();
         });
-        if (answersComplete >= 60) {
-            return true;
-        }
-        else {
+        if(clicked == false) {
+            $('ul[data-quiz-question]').each(function () {
+                if ($(this).find('.quiz-answer.active').length) {
+                    answersComplete++;
+                    //console.log(answersComplete);
+                }
+            });
             return false;
         }
+
     }
     this._showResult = function (result) {
         $('.quiz-result').addClass(result.code).html(result.text);
@@ -138,27 +151,15 @@
             var $this = $(this),
                 $answers = $this.closest('ul[data-quiz-question]');
             self._pickAnswer($this, $answers);
+
             if (self._isComplete()) {
-
-                // scroll to answer section
-                $('html, body').animate({
-                    scrollTop: $('.quiz-result').offset().top
-                });
-
-                self._showResult(self._calcResult());
-                $('.quiz-answer').off('click');
-
             }
         });
     }
 }
+
+
 var quiz = new Quiz();
 quiz.init();
 
-var somefunction = function () {
-    var hdnfldVariable = document.getElementById('hdnfldVariable');
-    hdnfldVariable.value = $('.quiz-result').addClass(result.code).html(result.text);
-}
-function setInputValue(input_id, val) {
-    document.getElementById(input_id).setAttribute('value', val);
-}
+
