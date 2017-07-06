@@ -1,4 +1,5 @@
-﻿var Results; 
+﻿var Results;
+var Flag;
 var Quiz = function () {
     var self = this;
     this.init = function () {
@@ -101,44 +102,41 @@ var Quiz = function () {
         var tempResults = numberOfCorrectAnswers;
 
         var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 60) * 100));
+        console.log(numberOfCorrectAnswers);
         if (numberOfCorrectAnswers <= 15) {
             Results = 'Poor';
-            return { code: 'bad', text: 'Poor ' };
         }
         else if ((numberOfCorrectAnswers >= 16) && (numberOfCorrectAnswers <= 36)) {
             Results = 'Below Average';
-            return { code: 'belowAve', text: 'Below Average' };
         }
         else if (numberOfCorrectAnswers > 36 && numberOfCorrectAnswers < 66) {
             Results = 'Average';
-            return { code: 'ave', text: 'Average ' };
         }
         else if (numberOfCorrectAnswers > 65 && numberOfCorrectAnswers < 86) {
             Results = 'Above Average';
-            return { code: 'aboveAve', text: 'Above Average ' };
         }
         else if (numberOfCorrectAnswers > 85) {
             Results = 'Outstanding';
-            return { code: 'good', text: 'Outstanding' };
         }
     }
     this._isComplete = function () {
-        var clicked = false;
+        Flag= false;
         var answersComplete = 0;
-        $(document).on('click', 'input',  function (e) {
-            clicked = true;
+        $(document).on('click', 'input',  function () {
             self._calcResult();
             $('.quiz-answer').off('click');
             document.getElementById('hdnField').value = Results;
-            e.preventDefault();
+            Flag = true; 
+            
         });
-        if(clicked == false) {
+        if(Flag == false) {
             $('ul[data-quiz-question]').each(function () {
                 if ($(this).find('.quiz-answer.active').length) {
                     answersComplete++;
                     //console.log(answersComplete);
                 }
             });
+            console.log("FALSE");
             return false;
         }
 
@@ -162,4 +160,11 @@ var Quiz = function () {
 var quiz = new Quiz();
 quiz.init();
 
+function checkForm(form) {
 
+    if (Flag === true) {
+        alert("Submitted!");
+        window.close();
+    }
+
+}

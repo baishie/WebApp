@@ -11,8 +11,8 @@
 </head>
 
 <body>
-        <form id="form" runat="server">  
-              <asp:HiddenField ID="hdnField" runat="server" value=""  />
+        <form id="form" runat="server" onsubmit="return checkForm(this);">  
+              <asp:HiddenField ID="hdnField" runat="server" value=""   />
               <div class="quiz">
                   <b><i>VOCABULARY (Synonyms)</i></b> <br /><br />
                <b>DIRECTIONS:</b><br /><br />
@@ -580,15 +580,17 @@
               </ul> 
                                      
                  <div class="one_col">
-                    <asp:Button ID="proceed" runat="server" Text="Submit" OnClick="proceed_Submit" />
+                    <%--<input type="button" OnClick="proceed_Submit" id="proceed" value="Submit"></input>--%>
+                    <asp:Button ID="proceed" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
+                    <%--<asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" UseSubmitBehavior="false" OnClientClick="this.disabled='true';this.value='Submitted'" />--%>
                 </div>                                                                                                                                                                                                                                                                                             
               </div>
 
         </form> 
 
 <%--    <div class="quiz-result"></div>--%>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>--%>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="JS/Exam.js"></script>
 </body>
 </html>

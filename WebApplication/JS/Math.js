@@ -85,12 +85,11 @@ var Quiz = function () {
         var clicked = false;
         var answersComplete = 0;
         $(document).on('click', 'input', function () {
-            clicked = true;
             self._calcResult();
             //console.log(Results);
             $('.quiz-answer').off('click');
             document.getElementById('hdnField').value = Results;
-
+            clicked = true;
         });
         if (clicked == false) {
             $('ul[data-quiz-question]').each(function () {

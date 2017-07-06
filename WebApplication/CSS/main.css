@@ -64,7 +64,7 @@ h1{
 	margin:1% 2% 0% 2%;
 	float:left;
 	z-index:10;
-	border:1px solid #ccc;
+	border:1px solid #005fd5;
 	background-color: #fff;
 }
 
@@ -119,10 +119,71 @@ h1{
 }
 
 .one_col #proceed:hover{
-    border-top-color:#fff;
 	background: #fff;
 	color: #2196F3;
-}	
+}
+
+
+.one_col #proceed:visited{
+    border-top-color:#7c7c7c;
+	background: #bababa;
+	color: #000;
+}
+
+.one_col #submit{
+    border-top-color: #2196F3;
+    background: #2196F3;
+    color: #fff;
+    cursor:pointer;
+
+}
+
+.one_col #submit:hover{
+	background: #fff;
+	color: #2196F3;
+}
+	
+.one_col #submit:disabled{
+	background: red;
+    border-color: red;
+	color: white;
+    cursor:not-allowed;
+}
+	
+
+.one_col #Button1:disabled{
+	background: red;
+    border-color: red;
+	color: white;
+    cursor:not-allowed;
+}
+.one_col .Button1 .Button2 .Button3 .Button4 :hover:enabled{
+	background: #2196F3;
+	color: #fff;
+    cursor:pointer;
+}
+
+.one_col #Button2:disabled{
+	background: red;
+    border-color: red;
+	color: white;
+    cursor:not-allowed;
+}
+.one_col #Button3:disabled{
+	background: red;
+    border-color: red;
+	color: white;
+    cursor:not-allowed;
+}
+
+.one_col #Button4:disabled{
+	background: red;
+    border-color: red;
+	color: white;
+    cursor:not-allowed;
+}
+	
+
 	
 .clear{
 	clear:both;

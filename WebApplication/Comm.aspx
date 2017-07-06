@@ -450,7 +450,7 @@
               </ul>  
                   
                  <div class="one_col">
-                    <asp:Button ID="proceed" runat="server" Text="Submit" OnClick="proceed_Submit" />
+                    <asp:Button ID="proceed" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
                 </div> 
                                                                                                                                                                                                                                                                                                                    
               </div>

@@ -110,11 +110,17 @@ var Quiz = function () {
         var clicked = false;
         var answersComplete = 0;
         $(document).on('click', 'input', function () {
-            clicked = true;
             self._calcResult();
+            //console.log(Results);
             $('.quiz-answer').off('click');
             document.getElementById('hdnField').value = Results;
-
+            clicked = true;
+            if (clicked == true) {
+                console.log("true");
+                setTimeout(function () {
+                    window.close();
+                }, 5000);
+            }
         });
         if (clicked == false) {
             $('ul[data-quiz-question]').each(function () {

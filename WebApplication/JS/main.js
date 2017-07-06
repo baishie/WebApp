@@ -11,14 +11,17 @@
  
     if (Name == '' && ConNum == '' && email == '' && source =='' && pos == '' && address == '') {
         alert("Enter All Fields");
+        console.log("ENTER ALL FIELDS");
         return false;
     }
     if (Name == '') {
         alert("Please Enter Name");
+        console.log("INVALID NAME");
         return false;
     }
     if (address == '') {
         alert("Please Enter Address");
+        console.log("INVALID ADDRESS");
         return false;
     }
     if (ConNum == '') {
@@ -29,13 +32,20 @@
         alert("Email Id Is Required");
         return false;
     }
-    if(source === 0) {
+    if(source === '0') {
         alert("Please select position");
+        console.log("INVALID SOURCE");
+        return false;
+    }
+    if (pos === '0') {
+        alert("Please select position");
+        console.log("INVALID POSITION");
         return false;
     }
     if (email != '') {
         if (!email.match(emailExp)) {
             alert("Invalid Email Id");
+            console.log("INVALID EMAIL");
             return false;
         }
     }
@@ -69,19 +79,22 @@ function error_message(elem, is_valid) {
 
 function StartTest(popUpPage) {
     document.getElementById("Button1").disabled = true;
-    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+    window.open("Vocabulary.aspx");
+    //window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
 }
 function StartTest1(popUpPage) {
     document.getElementById("Button2").disabled = true;
-    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+    window.open("Math.aspx");
+    //window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
 }
 function StartTest2(popUpPage) {
     document.getElementById("Button3").disabled = true;
-    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+    window.open("Comm.aspx");
+    //window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
 }
 function StartTest3(popUpPage) {
     document.getElementById("Button4").disabled = true;
-    window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
+    //window.open(popUpPage, 'null', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,fullscreen=yes');
 }
 
 
