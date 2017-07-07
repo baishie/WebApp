@@ -1,4 +1,5 @@
 ﻿var Results;
+var Flag;
 var Quiz = function () {
     var self = this;
     this.init = function () {
@@ -26,6 +27,7 @@ var Quiz = function () {
       { question: 18, answer: 'a' },
       { question: 19, answer: 'a' },
       { question: 20, answer: 'a' },
+
     ]
 
     this._pickAnswer = function ($answer, $answers) {
@@ -60,44 +62,41 @@ var Quiz = function () {
         var tempResults = numberOfCorrectAnswers;
 
         var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 20) * 100));
+        console.log(numberOfCorrectAnswers);
         if (numberOfCorrectAnswers <= 15) {
             Results = 'Poor';
-            return { code: 'bad', text: 'Poor ' };
         }
         else if ((numberOfCorrectAnswers >= 16) && (numberOfCorrectAnswers <= 36)) {
             Results = 'Below Average';
-            return { code: 'belowAve', text: 'Below Average' };
         }
         else if (numberOfCorrectAnswers > 36 && numberOfCorrectAnswers < 66) {
             Results = 'Average';
-            return { code: 'ave', text: 'Average ' };
         }
         else if (numberOfCorrectAnswers > 65 && numberOfCorrectAnswers < 86) {
             Results = 'Above Average';
-            return { code: 'aboveAve', text: 'Above Average ' };
         }
         else if (numberOfCorrectAnswers > 85) {
             Results = 'Outstanding';
-            return { code: 'good', text: 'Outstanding' };
         }
     }
     this._isComplete = function () {
-        var clicked = false;
+        Flag = false;
         var answersComplete = 0;
         $(document).on('click', 'input', function () {
             self._calcResult();
-            //console.log(Results);
             $('.quiz-answer').off('click');
             document.getElementById('hdnField').value = Results;
-            clicked = true;
+            Flag = true;
+
         });
-        if (clicked == false) {
+        if (Flag == false) {
             $('ul[data-quiz-question]').each(function () {
                 if ($(this).find('.quiz-answer.active').length) {
                     answersComplete++;
                     //console.log(answersComplete);
                 }
             });
+            console.log("FALSE");
             return false;
         }
 
@@ -116,5 +115,24 @@ var Quiz = function () {
         });
     }
 }
-var quiz = new Quiz();
-quiz.init();
+
+var clicked = sessionStorage.getItem('clicked');
+console.log(clicked + "CLICKED NI");
+if (clicked === 'true') {
+    $('.quiz-answer').off('click');
+    document.getElementById("submit").disabled = true;
+}
+else {
+    var quiz = new Quiz();
+    quiz.init();
+}
+
+
+function checkForm(form) {
+
+    if (Flag === true) {
+        sessionStorage.setItem('clicked', 'true');
+        alert("Answer Submitted. You may close this after.");
+    }
+
+}

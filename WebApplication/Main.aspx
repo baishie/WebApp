@@ -17,7 +17,7 @@
     </header>
 	<h1>Contact Form</h1>
     <div class="contact" runat="server" >
-            <form id="form1" runat="server">
+            <form id="form" runat="server" onsubmit="return checkForm(this);">  
 			    <div class="one_col">
                     <asp:TextBox ID="name" placeholder="Name" runat="server" required="required"></asp:TextBox>
 			    </div>	
@@ -34,12 +34,12 @@
                     <asp:TextBox ID="bday" placeholder="Birthday" runat="server" required="required"></asp:TextBox>
 			    </div>									
 			    <div class="three_col">
-                    <asp:DropDownList ID="PositionList" Width="460px" Height="45px" runat="server" required="required" >
+                    <asp:DropDownList ID="PositionList" Width="460px" Height="45px" runat="server"  >
                         <asp:ListItem Value="0">Position</asp:ListItem>
                         <asp:ListItem Value="1">Fiber Technician</asp:ListItem>
                         <asp:ListItem Value="2">System Administrator</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" required="required" >
+                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" r >
                         <asp:ListItem Value="0">Source</asp:ListItem>
                     </asp:DropDownList>    	
 			    </div>

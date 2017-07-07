@@ -11,7 +11,7 @@
 </head>
 
 <body>
-        <form id="form" runat="server">  
+        <form id="form" runat="server" onsubmit="return checkForm(this);"> 
               <asp:HiddenField ID="hdnField" runat="server" value=""  />
               <div class="quiz">
                   <b><i>COMMUNICATION (Identifying the Errors)</i></b> <br /><br />
@@ -450,7 +450,7 @@
               </ul>  
                   
                  <div class="one_col">
-                    <asp:Button ID="proceed" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
+                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
                 </div> 
                                                                                                                                                                                                                                                                                                                    
               </div>

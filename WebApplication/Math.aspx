@@ -11,7 +11,7 @@
 </head>
 
 <body>
-        <form id="form" runat="server">  
+        <form id="form" runat="server" onsubmit="return checkForm(this);"> 
                
               <div class="quiz">
                   <asp:HiddenField ID="hdnField" runat="server" value=""  />
@@ -323,14 +323,13 @@
               </ul>
 
                  <div class="one_col">
-                    <asp:Button ID="proceed" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
+                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
                 </div>   
                                                                                                                                                                                                                                                                                                                 
               </div>
 
         </form> 
-
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="JS/Math.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="CSS/main.css">
 </head>
     <script src="JS/main.js"></script>
+
     <body> 
     <header >
       <figure class="logo" runat="server">
@@ -18,7 +19,7 @@
         <div class="contact" runat="server">
                 <form id="form1" runat="server">
                     <div class="one_col">
-                        <center> <div id="divCounter"></div> </center>   
+                        <center> <div>You have <span id="time">60:00</span> minutes!</div> </center>   
                     </div>	                    
                                  
                     <div class="one_col">

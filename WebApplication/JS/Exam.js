@@ -156,15 +156,23 @@ var Quiz = function () {
     }
 }
 
+var clicked = sessionStorage.getItem('clicked');
+//console.log(clicked + "CLICKED NI");
+if (clicked === 'true') {
+    $('.quiz-answer').off('click');
+    document.getElementById("submit").disabled = true;
+}
+else {
+    var quiz = new Quiz();
+    quiz.init();
+}
 
-var quiz = new Quiz();
-quiz.init();
 
 function checkForm(form) {
 
     if (Flag === true) {
-        alert("Submitted!");
-        window.close();
+        sessionStorage.setItem('clicked', 'true');
+        alert("Answer Submitted. You may close this after.");
     }
 
 }

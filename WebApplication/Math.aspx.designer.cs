@@ -31,12 +31,12 @@ namespace WebApplication {
         protected global::System.Web.UI.WebControls.HiddenField hdnField;
         
         /// <summary>
-        /// proceed control.
+        /// submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button proceed;
+        protected global::System.Web.UI.WebControls.Button submit;
     }
 }
