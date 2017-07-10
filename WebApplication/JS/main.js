@@ -1,4 +1,5 @@
-﻿function checkForm(form) {
+﻿
+function checkForm(form) {
     var Name, ConNum, pos, email, Source;
  
     Name = document.getElementById("name").value;
@@ -38,7 +39,6 @@ function isNumberKey(evt) {
         return false;
     return true;
 }
-
 
 function StartTest(popUpPage) {
     document.getElementById("Button1").disabled = true;

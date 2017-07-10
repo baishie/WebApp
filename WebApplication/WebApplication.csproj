@@ -73,8 +73,12 @@
   <ItemGroup>
     <Content Include="Comm.aspx" />
     <Content Include="CSS\GenExam.css" />
+    <Content Include="CSS\jquery-ui.css" />
     <Content Include="JS\Comm.js" />
+    <Content Include="JS\datepicker.js" />
     <Content Include="JS\Exam.js" />
+    <Content Include="JS\jquery-ui.js" />
+    <Content Include="JS\jquery.js" />
     <Content Include="JS\Math.js" />
     <Content Include="Math.aspx" />
     <Content Include="packages.config" />
