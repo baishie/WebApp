@@ -19,9 +19,14 @@ namespace WebApplication{
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack)
             {
-                const string f = @"C:\Users\kellym\Downloads\WebApp\Source.txt";
-                FileStream fp = new FileStream(f, FileMode.Open);
-                StreamReader reader = new StreamReader(fp);
+                const string file1 = @"C:\Users\kellym\Downloads\WebApp\Source.txt";
+                const string file2 = @"C:\Users\kellym\Downloads\WebApp\Position.txt";
+
+                FileStream f1 = new FileStream(file1, FileMode.Open);
+                FileStream f2 = new FileStream(file2, FileMode.Open);
+
+                StreamReader reader = new StreamReader(f1);
+                StreamReader reader2 = new StreamReader(f2);
 
                 string data;
                 List<string> lines = new List<string>();
@@ -30,8 +35,16 @@ namespace WebApplication{
                     ListItem L = new ListItem(data);
                     Source.Items.Add(L);
                 }
+                while ((data = reader2.ReadLine()) != null)
+                {
+                    ListItem L = new ListItem(data);
+                    PositionList.Items.Add(L);
+                }
                 reader.Close();
-                fp.Close();
+                reader2.Close();
+                f1.Close();
+                f2.Close();
+
             }
         }
 

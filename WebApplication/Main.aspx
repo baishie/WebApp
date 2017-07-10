@@ -55,9 +55,8 @@
 			    <div class="three_col">
                     <asp:DropDownList ID="PositionList" Width="460px" Height="45px" runat="server"  >
                         <asp:ListItem Value="0">Position</asp:ListItem>
-                        <asp:ListItem Value="1">Fiber Technician</asp:ListItem>
-                        <asp:ListItem Value="2">System Administrator</asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" r >
                         <asp:ListItem Value="0">Source</asp:ListItem>
                     </asp:DropDownList>    	
