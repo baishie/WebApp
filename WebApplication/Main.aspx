@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Trial Ran ni</title>
+    <title>Applicant's Information</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <script src="JS/main.js"></script>
