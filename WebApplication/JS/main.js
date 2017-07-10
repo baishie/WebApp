@@ -40,43 +40,20 @@ function isNumberKey(evt) {
     return true;
 }
 
-function StartTest(popUpPage) {
-    document.getElementById("Button1").disabled = true;
-    window.open("Vocabulary.aspx");
-}
-function StartTest1(popUpPage) {
-    document.getElementById("Button2").disabled = true;
-    window.open("Math.aspx");
-}
-function StartTest2(popUpPage) {
-    document.getElementById("Button3").disabled = true;
-    window.open("Comm.aspx");
-}
-function StartTest3(popUpPage) {
-    document.getElementById("Button4").disabled = true;
-}
+//function StartTest(popUpPage) {
+//    document.getElementById("Button1").disabled = true;
+//    window.open("Vocabulary.aspx");
+//}
+//function StartTest1(popUpPage) {
+//    document.getElementById("Button2").disabled = true;
+//    window.open("Math.aspx");
+//}
+//function StartTest2(popUpPage) {
+//    document.getElementById("Button3").disabled = true;
+//    window.open("Comm.aspx");
+//}
+//function StartTest3(popUpPage) {
+//    document.getElementById("Button4").disabled = true;
+//}
 
 
-
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
-
-window.onload = function () {
-    var fiveMinutes = 60 * 60,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
-};
