@@ -15,7 +15,7 @@
 
       </figure>
     </header>
-	<h1>Contact Form</h1>
+	<h1>Applicant's Information Form</h1>
     <div class="contact" runat="server" >
             <form id="form" runat="server" onsubmit="return checkForm(this);">  
 			    <div class="one_col">
