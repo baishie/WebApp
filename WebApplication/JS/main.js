@@ -8,7 +8,7 @@ function checkForm(form) {
     email = document.getElementById("email").value;
     source = document.getElementById("Source").value;
     pos = document.getElementById("PositionList").value;
-    emailExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([com\co\.\in])+$/; // regex to validate email address
+    emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // regex to validate email address
  
     if (email == '') {
         alert("Email Id Is Required");
@@ -16,7 +16,7 @@ function checkForm(form) {
     }
     if (email != '') {
         if (!email.match(emailExp)) {
-            alert("Invalid Email Id");
+            alert("Please enter a valid email address");
             console.log("INVALID EMAIL");
             return false;
         }

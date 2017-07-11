@@ -44,7 +44,7 @@
                     <asp:TextBox ID="address" placeholder="Address" runat="server" required="required"></asp:TextBox>
 			    </div>				
 			    <div class="one_col email">
-                    <asp:TextBox ID="email" placeholder="Email" runat="server" required="required"></asp:TextBox>
+                    <asp:TextBox ID="email" type="email" placeholder="Email" runat="server" required="required"></asp:TextBox>
 			    </div>	
 			    <div class="one_col">
                     <asp:TextBox ID="cnumber" onkeypress="return isNumberKey(event)" placeholder="Contact Number" runat="server" required="required"></asp:TextBox>
