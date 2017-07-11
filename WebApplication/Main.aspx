@@ -57,7 +57,7 @@
                         <asp:ListItem Value="0">Position</asp:ListItem>
                     </asp:DropDownList>
 
-                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" r >
+                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" >
                         <asp:ListItem Value="0">Source</asp:ListItem>
                     </asp:DropDownList>    	
 			    </div>

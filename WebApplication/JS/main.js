@@ -47,7 +47,7 @@ function isNumberKey(evt) {
 //function StartTest1(popUpPage) {
 //    document.getElementById("Button2").disabled = true;
 //    window.open("Math.aspx");
-//}
+//} 
 //function StartTest2(popUpPage) {
 //    document.getElementById("Button3").disabled = true;
 //    window.open("Comm.aspx");
