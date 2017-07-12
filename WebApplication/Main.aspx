@@ -9,24 +9,10 @@
     <link rel="stylesheet" href="CSS/jquery-ui.css">
 
 </head>
-<script type="text/javascript" src="JS/main.js"></script>
 <script type="text/javascript" src="JS/jquery.js"></script>
 <script type="text/javascript" src="JS/jquery-ui.js"></script>
- <!-- Setup Datepicker -->
- <script type="text/javascript">
-    $(function() {
-        $(document).ready(function () {
-            $("[id$=bday]").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                minDate: new Date(1950, 0, 1),
-                maxDate: new Date(2020, 11, 31),
-                defaultDate: new Date(1950, 0, 1),
-                yearRange: '1950:2020'
-            });
-        });
-    });
-    </script>
+<script type="text/javascript" src="JS/main.js"></script>
+
 <body>
     <header >
       <figure class="logo" runat="server">

@@ -40,6 +40,19 @@ function isNumberKey(evt) {
     return true;
 }
 
+$(function () {
+    $(document).ready(function () {
+        $("[id$=bday]").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: new Date(1950, 0, 1),
+            maxDate: new Date(2020, 11, 31),
+            defaultDate: new Date(1950, 0, 1),
+            yearRange: '1950:2020'
+        });
+    });
+});
+
 //function StartTest(popUpPage) {
 //    document.getElementById("Button1").disabled = true;
 //    window.open("Vocabulary.aspx");
