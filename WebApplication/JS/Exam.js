@@ -5,7 +5,7 @@ var Quiz = function () {
     this.init = function () {
         self._bindEvents();
     }
-
+    //replace answer with correct answer key
     this.correctAnswers = [
       { question: 1, answer: 'a' },
       { question: 2, answer: 'a' },

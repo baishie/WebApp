@@ -5,7 +5,7 @@ var Quiz = function () {
     this.init = function () {
         self._bindEvents();
     }
-
+    //replace answer with correct answer key
     this.correctAnswers = [
       { question: 1, answer: 'a' },
       { question: 2, answer: 'a' },
@@ -50,14 +50,7 @@ var Quiz = function () {
 
             if (chosenAnswer == correctAnswer) {
                 numberOfCorrectAnswers++;
-
-                // highlight this as correct answer
-                //$this.find('.quiz-answer.active').addClass('correct');
             }
-            //else {
-            //    $this.find('.quiz-answer[data-quiz-answer="' + correctAnswer + '"]').addClass('correct');
-            //    $this.find('.quiz-answer.active').addClass('incorrect');
-            //}
         });
         var tempResults = numberOfCorrectAnswers;
 
@@ -129,7 +122,6 @@ else {
 
 
 function checkForm(form) {
-
     if (Flag === true) {
         sessionStorage.setItem('clicked', 'true');
         alert("Answer Submitted. You may close this after.");
