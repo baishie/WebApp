@@ -13,7 +13,7 @@
 <script type="text/javascript" src="JS/jquery-ui.js"></script>
 <script type="text/javascript" src="JS/main.js"></script>
 
-<body>
+<body onload="populateSource();">
     <header >
       <figure class="logo" runat="server">
       <img src="/images/HOIT_Icon.png" height="120px">
@@ -43,11 +43,13 @@
                         <asp:ListItem Value="0" disabled selected>Position</asp:ListItem>
                     </asp:DropDownList>
 
-                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" >
+                    <asp:DropDownList ID="Source" Width="460px" Height="45px" runat="server" onChange = "showHidden()" >
                         <asp:ListItem Value="0" disabled selected>Source</asp:ListItem>
                     </asp:DropDownList>    	
 			    </div>
-
+			    <div class="one_col">
+                    <asp:TextBox runat="server" id="others" placeholder="Others" required="required" style=" display: none"></asp:TextBox>
+			    </div>
                 <div class="one_col">
                     <asp:Button ID="proceed" runat="server" Text="Proceed" OnClick="proceed_Click"/>
                 </div>				

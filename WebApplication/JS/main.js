@@ -53,6 +53,31 @@ $(function () {
     });
 });
 
+function populateSource() {
+    var dropdown = document.getElementById("Source");
+    //to add source, just insert here
+    var sources = ['Mynimo', 'JObstreet', 'Referral', 'Walk-in', 'HOIT Website', 'HOIT Careers FB Page', 'LinkedIn', 'Others']
+    var arrayLength = sources.length;
+    var data;
+    for (var i = 0; i < arrayLength; i++) {
+        data = sources[i];
+        dropdown.options[dropdown.options.length] = new Option(data, i);
+    }
+}
+
+function showHidden() {
+    var source = document.getElementById("Source");
+    var others = document.getElementById("others");
+    var selectedSource = source.options[source.selectedIndex].text;
+
+    if (selectedSource === 'Others') {
+        document.getElementById("others").style.display = 'block';
+    }
+    else {
+        document.getElementById("others").style.display = 'none';
+    }
+
+}
 //function StartTest(popUpPage) {
 //    document.getElementById("Button1").disabled = true;
 //    window.open("Vocabulary.aspx");
