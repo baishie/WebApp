@@ -57,9 +57,8 @@ function populateSource() {
     var dropdown = document.getElementById("Source");
     //to add source, just insert here
     var sources = ['Mynimo', 'JObstreet', 'Referral', 'Walk-in', 'HOIT Website', 'HOIT Careers FB Page', 'LinkedIn', 'Others']
-    var arrayLength = sources.length;
     var data;
-    for (var i = 0; i < arrayLength; i++) {
+    for (var i = 0; i < sources.length; i++) {
         data = sources[i];
         dropdown.options[dropdown.options.length] = new Option(data, i);
     }
